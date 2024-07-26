@@ -1,42 +1,53 @@
+body {
+ background-image: url("https://miro.medium.com/v2/resize:fit:1200/1*6Jp3vJWe7VFlFHZ9WhSJng.jpeg");
+
+ background-size: 100vh 100vw;
+ background-color: rgb(255, 255, 255);
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  border: 3px solid black;
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+input, label, button {
+  margin: 10px;
+}
+
+label {
+  font-size: 30px;
+}
+
+input {
+  padding: 15px;
+}
+
+button {
+  width: 100px;
+  padding: 10px;
+  background-color: cadetblue;
+  border-radius: 10px;
+  margin: auto;
+}
+
+h2 {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.hidden {
+  display: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shown {
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}

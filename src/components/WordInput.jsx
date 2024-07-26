@@ -1,20 +1,36 @@
 import { useState } from "react"
 import WordDefinition from "./WordDefinition"
+import dictionary from '../../dictionary.json'
 
 function WordInput(props){
 
     const [wordInput,setWordInput] = useState("")
-    const {setWord} = props
+    const {setWord , setRecentWords , setValidWord} = props
 
 
     function handleChange(event) {
-        setWordInput(event.target.value)
+        const rejects = /[a-zA-Z]/g
+        if (event.target.value.match(rejects)) {
+            setWordInput(event.target.value)   
+        }
     }
     function handleClick(event){
         event.preventDefault()
         setWord(wordInput)
         setWordInput("")
+        setRecentWords(recentWords => {
+            const recentWordsCopy = [...recentWords]
+            if (dictionary[wordInput.toUpperCase()]) {
+                recentWords.push(wordInput)
+                setValidWord(true)
+            } else {
+                setValidWord(false)
+            }
+            console.log(recentWords)
+            return recentWords
+        })
     }
+
     return(
         <>
         <form>
