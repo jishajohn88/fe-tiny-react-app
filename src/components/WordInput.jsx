@@ -9,8 +9,8 @@ function WordInput(props){
 
 
     function handleChange(event) {
-        const rejects = /[a-zA-Z]/g
-        if (event.target.value.match(rejects)) {
+        const regex = /[a-zA-Z]/g
+        if (event.target.value.match(regex)) {
             setWordInput(event.target.value)   
         }
     }
@@ -19,7 +19,7 @@ function WordInput(props){
         setWord(wordInput)
         setWordInput("")
         setRecentWords(recentWords => {
-            const recentWordsCopy = [...recentWords]
+            
             if (dictionary[wordInput.toUpperCase()]) {
                 recentWords.push(wordInput)
                 setValidWord(true)
